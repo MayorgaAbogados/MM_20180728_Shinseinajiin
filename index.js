@@ -6,18 +6,35 @@
 //      City     :  Bogotá, Colombia.
 //      Comments :
 // ------------------------------------------------------------------- //
-
+/*
+ *
+ */
 // ------------------------------------------------------------------- //
 // -- Loading Server Config files ------------------------------------ //
 // ------------------------------------------------------------------- //
-
-//Install express server
-const express = require("express");
-//const express = require("express");
-const path = require("path");
-
-const app = express();
-
+    import config from ('./server/config.json');
+// ------------------------------------------------------------------- //
+/*
+ *
+ */
+// ------------------------------------------------------------------- //
+// -- Require Express & Path ----------------------------------------- //
+// ------------------------------------------------------------------- //
+    const express = require("express");
+    const nodemailer = require('nodemailer');
+    const path = require("path");
+// ------------------------------------------------------------------- //
+/*
+ *
+ */
+// ------------------------------------------------------------------- //
+// -- Run Server App  ------------------------------------------------ //
+// ------------------------------------------------------------------- //
+    const app = express();
+// ------------------------------------------------------------------- //
+/*
+ *
+ */
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + "/"));
 
@@ -30,12 +47,41 @@ app.get("/:app", function(req, res) {
   res.sendFile(path.join(__dirname + `/apps/${app_folder}/dist/index.html`));
 });
 
-app.get("/api/email/", function(req, res) {
-  var api_content = {};
-  api_content = {
+app.post("/api/email/", function(req, res) {
+
+    var api_content = {};
+
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'jl.mayorga236@gmail.com',
+            pass: 'lvosca.inc'
+        }
+    });
+
+    var mailOptions = {
+        from: 'jl.mayorga236@gmail.com',
+        to: 'wallamejorge@hotmail.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+                api_content = {
     api: "email",
-    response: "Email Api Request"
-  };
+    response: "Email Api Request Failed",
+    "error" : error
+    };
+        } else {
+            api_content = {
+                api: "email",
+                response: info.response;
+            };
+        }
+    });
+
   var api_out = JSON.stringify(api_content);
   res.send(api_out);
 });
