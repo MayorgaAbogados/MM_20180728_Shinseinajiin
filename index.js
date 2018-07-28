@@ -1,4 +1,18 @@
+// ------------------------------------------------------------------- //
+// -- Node.js + Express Server for mm-abogados WebServices          -- //
+// ------------------------------------------------------------------- //
+//      Author   :  Jorge Luis Mayorga
+//      Update   :  28/07/2018
+//      City     :  Bogotá, Colombia.
+//      Comments :
+// ------------------------------------------------------------------- //
+
+// ------------------------------------------------------------------- //
+// -- Loading Server Config files ------------------------------------ //
+// ------------------------------------------------------------------- //
+
 //Install express server
+const express = require("express");
 const express = require("express");
 const path = require("path");
 
@@ -13,7 +27,7 @@ app.get("/:app", function(req, res) {
 });
 
 app.get("/api/email/", function(req, res) {
-  var api_content = null;
+  var api_content = {};
   api_content = {
     api: "email",
     response: "Email Api Request"
