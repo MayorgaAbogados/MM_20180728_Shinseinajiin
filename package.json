@@ -1,0 +1,19 @@
+{
+  "name": "mm_20180728_shinseinajiin",
+  "version": "1.0.0",
+  "description": "Lawyer web app for CRM, Website, Form generator and all IT Infrastructure",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.j          "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayorgaAbogados/MM_20180728_Shinseinajiin.git"
+  },
+  "author": "Jorge Luis Mayorga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MayorgaAbogados/MM_20180728_Shinseinajiin/issues"
+  },
+  "homepage": "https://github.com/MayorgaAbogados/MM_20180728_Shinseinajiin#readme"
+}
