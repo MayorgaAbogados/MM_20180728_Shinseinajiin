@@ -72,16 +72,17 @@ app.post("/api/email/", function(req, res) {
         response: "Email Api Request Failed",
         error: error
       };
+      var api_out = JSON.stringify(api_content);
+      res.send(api_out);
     } else {
       api_content = {
         api: "email",
         response: info.response
       };
+      var api_out = JSON.stringify(api_content);
+      res.send(api_out);
     }
   });
-
-  var api_out = JSON.stringify(api_content);
-  res.send(api_out);
 });
 
 // Start the app by listening on the default Heroku port
