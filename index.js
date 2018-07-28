@@ -11,5 +11,9 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
+app.get("/php", function(req, res) {
+  res.sendFile(path.join(__dirname + "myphp.php"));
+});
+
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
