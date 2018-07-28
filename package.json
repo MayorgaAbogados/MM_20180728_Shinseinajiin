@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MayorgaAbogados/MM_20180728_Shinseinajiin/issues"
   },
-  "homepage": "https://github.com/MayorgaAbogados/MM_20180728_Shinseinajiin#readme"
+  "homepage": "https://github.com/MayorgaAbogados/MM_20180728_Shinseinajiin#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
