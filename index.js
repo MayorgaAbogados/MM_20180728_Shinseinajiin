@@ -33,7 +33,7 @@ app.get("/api/email/", function(req, res) {
     response: "Email Api Request"
   };
   var api_out = JSON.stringify(api_content);
-  res.send();
+  res.send(api_out);
 });
 
 // Start the app by listening on the default Heroku port
