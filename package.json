@@ -4,7 +4,8 @@
   "description": "Lawyer web app for CRM, Website, Form generator and all IT Infrastructure",
   "main": "index.js",
   "scripts": {
-    "test": "test.j          "
+    "start": "node index.js",
+    "test": "test.js"
   },
   "repository": {
     "type": "git",
