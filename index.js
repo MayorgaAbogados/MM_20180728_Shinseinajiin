@@ -12,7 +12,7 @@
 // ------------------------------------------------------------------- //
 // -- Loading Server Config files ------------------------------------ //
 // ------------------------------------------------------------------- //
-    import config from ('./server/config.json');
+const config = require("./server/config.json");
 // ------------------------------------------------------------------- //
 /*
  *
@@ -20,9 +20,9 @@
 // ------------------------------------------------------------------- //
 // -- Require Express & Path ----------------------------------------- //
 // ------------------------------------------------------------------- //
-    const express = require("express");
-    const nodemailer = require('nodemailer');
-    const path = require("path");
+const express = require("express");
+const nodemailer = require("nodemailer");
+const path = require("path");
 // ------------------------------------------------------------------- //
 /*
  *
@@ -30,7 +30,7 @@
 // ------------------------------------------------------------------- //
 // -- Run Server App  ------------------------------------------------ //
 // ------------------------------------------------------------------- //
-    const app = express();
+const app = express();
 // ------------------------------------------------------------------- //
 /*
  *
@@ -48,39 +48,37 @@ app.get("/:app", function(req, res) {
 });
 
 app.post("/api/email/", function(req, res) {
+  var api_content = {};
 
-    var api_content = {};
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "jl.mayorga236@gmail.com",
+      pass: "lvosca.inc"
+    }
+  });
 
+  var mailOptions = {
+    from: "jl.mayorga236@gmail.com",
+    to: "wallamejorge@hotmail.com",
+    subject: "Sending Email using Node.js",
+    text: "That was easy!"
+  };
 
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'jl.mayorga236@gmail.com',
-            pass: 'lvosca.inc'
-        }
-    });
-
-    var mailOptions = {
-        from: 'jl.mayorga236@gmail.com',
-        to: 'wallamejorge@hotmail.com',
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
-    };
-
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-                api_content = {
-    api: "email",
-    response: "Email Api Request Failed",
-    "error" : error
-    };
-        } else {
-            api_content = {
-                api: "email",
-                response: info.response;
-            };
-        }
-    });
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      api_content = {
+        api: "email",
+        response: "Email Api Request Failed",
+        error: error
+      };
+    } else {
+      api_content = {
+        api: "email",
+        response: info.response
+      };
+    }
+  });
 
   var api_out = JSON.stringify(api_content);
   res.send(api_out);
