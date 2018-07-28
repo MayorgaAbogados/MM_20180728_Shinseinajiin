@@ -12,7 +12,7 @@ app.get("/:app", function(req, res) {
   res.sendFile(path.join(__dirname + `/apps/${app_folder}/dist/index.html`));
 });
 
-app.post("/api/email/", function(req, res) {
+app.get("/api/email/", function(req, res) {
   var api_content = null;
   api_content = {
     api: "email",
