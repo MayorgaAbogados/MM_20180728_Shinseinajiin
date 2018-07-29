@@ -1,6 +1,7 @@
 const { Client } = require("pg");
 var database = {};
 database.add = function(param, data) {
+  /*
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
@@ -19,6 +20,13 @@ database.add = function(param, data) {
       client.end();
     }
   );
+  */
+
+  var out = [
+    { status: "OK" },
+    { message: "Objeto agregado exitosamente a la base de datos" }
+  ];
+  return out;
 };
 
 module.exports = database;

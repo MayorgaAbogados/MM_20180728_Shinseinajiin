@@ -2,6 +2,7 @@
 // Controller : Memberships
 // ----------------------------------------------------------------//
 const database = require("../database/index.js");
+const email = require("../emails/send.js");
 // ----------------------------------------------------------------//
 var controller = {};
 // Membership's SignUp Routing Handler
@@ -35,6 +36,27 @@ controller.add = function(req, res) {
     else
       return ajax json : error
   */
+  console.log(dbResponse);
+  if (dbResponse.status == "OK") {
+    var emailConfig = {
+      from: "info@mayorga.com.co",
+      to: "wallamejorge@hotmail.com",
+      subject: "Envio de Prueba",
+      text: "Todo Bien, se ~agrego~ a la base de datos y se envia el email"
+    };
+  } else {
+    var emailConfig = {
+      from: "info@mayorga.com.co",
+      to: "wallamejorge@hotmail.com",
+      subject: "Error Envio de Prueba",
+      text: "Tenemos un error en el sistema :( "
+    };
+  }
+
+  var emailData = db_data;
+  email.send(emailConfig, emailData, function(result) {
+    res.send(result);
+  });
 };
 
 // Membership's Login Routing Handler

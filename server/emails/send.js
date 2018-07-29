@@ -4,7 +4,7 @@
 const nodemailer = require("nodemailer");
 // ---------------------------------------------- //
 module.exports = {
-  send: function(email, data) {
+  send: function(email, data, callback) {
     let smtpConfig = {
       host: "perseo.yoursitesecure.net",
       port: 465,
@@ -20,16 +20,16 @@ module.exports = {
       to: email.to,
       subject: email.subject,
       //attachDataUrls: true,
-      text: email.text,
-      html: email
+      text: email.text
     };
 
     let mailTransporter = nodemailer.createTransport(smtpConfig);
+    console.log("Starting to Send Email");
     mailTransporter.sendMail(mailOptions, function(error, info) {
       if (error) {
-        res.send(api_out);
+        callback(error);
       } else {
-        res.send(api_out);
+        callback(info);
       }
     });
   }
