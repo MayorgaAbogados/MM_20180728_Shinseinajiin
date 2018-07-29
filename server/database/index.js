@@ -1,6 +1,6 @@
 const { Client } = require("pg");
-
-var add = function(param, data) {
+var database = {};
+database.add = function(param, data) {
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true

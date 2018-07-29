@@ -11,7 +11,6 @@ controller.signup = function(req, res) {
 };
 // Add Membership Form to Signup, Append to database and send email
 controller.add = function(req, res) {
-
   var db_data = {
     company: req.body.company,
     nit: req.body.nit,
@@ -25,9 +24,9 @@ controller.add = function(req, res) {
     content: req.body.content
   };
   var db_config = {
-    table_name : "memberships"
-  }
-  var dbResponse = await database.add(db_config,db_data);
+    table_name: "memberships"
+  };
+  var dbResponse = database.add(db_config, db_data);
   /*TODO :
     Add to Database;
     if (Suscesfull) then :
