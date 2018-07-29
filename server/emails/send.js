@@ -6,8 +6,8 @@ const nodemailer = require("nodemailer");
 module.exports = {
   send: function(email, data) {
     let smtpConfig = {
-      host: "smtp.example.com",
-      port: 587,
+      host: "perseo.yoursitesecure.net",
+      port: 465,
       secure: true,
       auth: {
         user: "admin@mayorga.com.co",
@@ -19,10 +19,9 @@ module.exports = {
       from: email.from,
       to: email.to,
       subject: email.subject,
-      attachDataUrls: true,
+      //attachDataUrls: true,
       text: email.text,
-      html :
-
+      html: email
     };
 
     let mailTransporter = nodemailer.createTransport(smtpConfig);
