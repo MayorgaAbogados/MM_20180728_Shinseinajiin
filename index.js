@@ -40,7 +40,7 @@ app.use(bodyParser.json());
 // ------------------------------------------------------------------- //
 // -- Load Models and Components ------------------------------------- //
 // ------------------------------------------------------------------- //
-app.use("/", require("./server/routes/home.js"));
+app.use("", require("./server/routes/home.js"));
 app.use("/membership", require("./server/routes/memberships.js"));
 // ------------------------------------------------------------------- //
 /*

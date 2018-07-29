@@ -7,7 +7,7 @@ var router = express.Router();
 // ----------------------------------------------------------------//
 
 // Membership's SignUp Routing Handler
-router.get("", function(req, res) {
+router.get("/", function(req, res) {
   controller.home(req, res);
 });
 
