@@ -13,6 +13,7 @@
 // -- Loading Server Config files ------------------------------------ //
 // ------------------------------------------------------------------- //
 const config = require("./server/config.json");
+const routes = require(config.path.route + "/" + "index.js");
 // ------------------------------------------------------------------- //
 /*
  *
@@ -21,8 +22,7 @@ const config = require("./server/config.json");
 // -- Require Express & Path ----------------------------------------- //
 // ------------------------------------------------------------------- //
 const express = require("express");
-const nodemailer = require("nodemailer");
-const path = require("path");
+var bodyParser = require("body-parser");
 // ------------------------------------------------------------------- //
 /*
  *
@@ -31,10 +31,28 @@ const path = require("path");
 // -- Run Server App  ------------------------------------------------ //
 // ------------------------------------------------------------------- //
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // ------------------------------------------------------------------- //
 /*
  *
  */
+// ------------------------------------------------------------------- //
+// -- Load Models and Components ------------------------------------- //
+// ------------------------------------------------------------------- //
+app.use("/membership", require("./server/routes/memberships.js"));
+// ------------------------------------------------------------------- //
+/*
+ *
+ */
+// ------------------------------------------------------------------- //
+// -- Run Server App  ------------------------------------------------ //
+// ------------------------------------------------------------------- //
+app.listen(process.env.PORT || 8080);
+// ------------------------------------------------------------------- //
+
+/*
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + "/"));
 
@@ -87,3 +105,4 @@ app.post("/api/email/", function(req, res) {
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
+*/

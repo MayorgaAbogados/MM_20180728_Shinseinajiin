@@ -1,8 +1,18 @@
 {
   "server-name": "mm-server",
+  "path": {
+    "controllers": "./server/controllers",
+    "route": "./server/routes"
+  },
   "database": {},
   "email": {
-    "smpt": {},
+    "smpt": {
+      "server": "",
+      "user": "",
+      "password": "",
+      "port": "",
+      "secure": true
+    },
     "imap": {}
   }
 }

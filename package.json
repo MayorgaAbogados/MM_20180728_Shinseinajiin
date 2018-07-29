@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/MayorgaAbogados/MM_20180728_Shinseinajiin#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
     "express": "^4.16.3",
     "nodemailer": "^4.6.7"
   }
