@@ -48,6 +48,14 @@ $meta->data = [
         <div class="container vertical-center">
         
             <h1 style="text-align:center;margin:0 auto;">Mayorga Abogados</h1>
+            <h2 style="color:darkcyan">CONTACTENOS</h2>
+            <ul class="services">
+SEDE 1 (CONSULTORÍA CORPORATIVA)  AV. EL DORADO NO. 68C-61 OFICINA 204-TORRE CENTRAL DAVIVIENDA 
+SEDE 2 (ARBITRAMENTO Y LITIGIO):  CALLE 22 F NO. 85 A-40 PISO 2 
+BOGOTÁ D.C  COLOMBIA
+PBX: (57-1) 4 322595  CELULARES: 315 2448112, 310 6962968, 317 8557728 
+SKYPE: MAYORGAABOGADOS  TWITTER: @MAYORGAABOGADOS </li>
+            </ul>
             <div id="app"></div>
 
         </div>
