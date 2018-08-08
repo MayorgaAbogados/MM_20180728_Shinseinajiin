@@ -83,7 +83,7 @@ export class AppComponent {
     formData.append("twitter", this.form.twitter);
     formData.append("consult", this.form.consult);
 
-    let url = "/backend/submit.php";
+    let url = "/app/backend/submit.php";
     let self = this;
     self.sendingFlag = true;
     axios
