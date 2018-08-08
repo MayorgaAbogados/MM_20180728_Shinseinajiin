@@ -70,6 +70,7 @@ export class AppComponent {
     }
   }
   postForm() {
+    
     let formData = new FormData();
     formData.append("company", this.form.company);
     formData.append("industry", this.form.industry);
@@ -82,7 +83,7 @@ export class AppComponent {
     formData.append("twitter", this.form.twitter);
     formData.append("consult", this.form.consult);
 
-    let url = "/memberships/add";
+    let url = "/backend/submit.php";
     let self = this;
     self.sendingFlag = true;
     axios

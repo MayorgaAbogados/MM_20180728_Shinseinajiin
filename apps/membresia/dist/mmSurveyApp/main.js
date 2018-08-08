@@ -144,7 +144,7 @@ var AppComponent = /** @class */ (function () {
         formData.append("phone", this.form.phone);
         formData.append("twitter", this.form.twitter);
         formData.append("consult", this.form.consult);
-        var url = "/memberships/add";
+        var url = "/backend/submit.php";
         var self = this;
         self.sendingFlag = true;
         axios__WEBPACK_IMPORTED_MODULE_2___default.a

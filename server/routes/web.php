@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('index/index');
 });
 
-Route::get('about', function () {
+Route::get('forms/membership/add', function () {
     return view('index/index');
 });
