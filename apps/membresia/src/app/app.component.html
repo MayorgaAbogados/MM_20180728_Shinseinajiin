@@ -1,0 +1,143 @@
+<div class="wrapper">
+
+
+  <header class="mm header">
+    <div class="message">
+      <h2>MEMBRESIA
+        <strong>GRATIS</strong>
+      </h2>
+    </div>
+    <div class="logo">
+      <img src="assets/logo.png" height="100%">
+    </div>
+  </header>
+
+  <div class="banner">
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+  </div>
+
+  <main class="mm form" *ngIf="sendingFlag">
+
+    <div class="title">
+      <img class="title-icon">
+      <h3 class="title-text">
+        Para culminar la
+        <strong>ACTIVACION GRATUITA</strong>
+        de SU MEMBRESIA,
+        <br> favor diligencie los siguientes campos</h3>
+    </div>
+
+    <div class="content">
+
+      <div class="form-input" id="mm-form-company" (click)="companyIsFocus = true" (focusout)="focusAnim('company')">
+        <i class="fas fa-briefcase"></i>
+        <label [ngClass]="{'focus': companyIsFocus}">Razón Social</label>
+        <input type="text" [(ngModel)]="form.company">
+      </div>
+
+      <div class="form-input" id="mm-form-nit" (click)="nitIsFocus = true" (focusout)="focusAnim('nit')">
+        <i class="fas fa-id-card"></i>
+        <label [ngClass]="{'focus': nitIsFocus}">NIT</label>
+        <input type="text" [(ngModel)]="form.nit">
+      </div>
+
+
+      <div class="form-input mm2 fc" id="mm-form-industry" (click)="industryIsFocus = true" (focusout)="focusAnim('industry')">
+        <i class="fas fa-file-contract"></i>
+        <label [ngClass]="{'focus': industryIsFocus}">Actividad</label>
+        <input type="text" [(ngModel)]="form.industry">
+      </div>
+
+      <div class="form-input mm2" id="mm-form-city" (click)="cityIsFocus = true" (focusout)="focusAnim('city')">
+        <i class="fas fa-map-marked-alt"></i>
+        <label [ngClass]="{'focus': cityIsFocus}">Ciudad</label>
+        <input type="text" [(ngModel)]="form.city">
+      </div>
+
+
+      <div class="form-input mm3 fc" id="mm-form-name" (click)="nameIsFocus = true" (focusout)="focusAnim('name')">
+        <i class="fas fa-user"></i>
+        <label [ngClass]="{'focus': nameIsFocus}">Nombre Completo</label>
+        <input type="text" [(ngModel)]="form.contactName">
+      </div>
+
+      <div class="form-input mm3" id="mm-form-email" (click)="emailIsFocus = true" (focusout)="focusAnim('email')">
+        <i class="fas fa-envelope"></i>
+        <label [ngClass]="{'focus': emailIsFocus}">Correo Electrónico</label>
+        <input type="text" [(ngModel)]="form.contactEmail">
+      </div>
+
+      <div class="form-input mm3" id="mm-form-cellphone" (click)="cellphoneIsFocus = true" (focusout)="focusAnim('cellphone')">
+        <i class="fas fa-mobile-alt"></i>
+        <label [ngClass]="{'focus': cellphoneIsFocus}">Teléfono Celular</label>
+        <input type="text" [(ngModel)]="form.contactCellphone">
+      </div>
+
+      <div class="form-input" id="mm-form-phone" (click)="phoneIsFocus = true" (focusout)="focusAnim('phone')">
+        <i class="fas fa-phone-square"></i>
+        <label [ngClass]="{'focus': phoneIsFocus}">Teléfono Fijo + Ext</label>
+        <input type="text" [(ngModel)]="form.phone">
+      </div>
+
+      <div class="form-input" id="mm-form-twitter" (click)="twitterIsFocus = true" (focusout)="focusAnim('twitter')">
+        <i class="fab fa-twitter-square"></i>
+        <label [ngClass]="{'focus': twitterIsFocus}">Twitter</label>
+        <input type="text" [(ngModel)]="form.twitter">
+      </div>
+
+      <div class="form-input" id="mm-form-consult" (click)="consultIsFocus = true" (focusout)="focusAnim('consult')">
+        <i class="fas fa-file-alt"></i>
+        <label [ngClass]="{'focus': consultIsFocus}">Sus inquietudes</label>
+        <textarea type="text" [(ngModel)]="form.consult"></textarea>
+      </div>
+
+      <div class="row">
+        <div class=""></div>
+        <div class="button enviar" (click)="postForm()">ENVIAR</div>
+      </div>
+
+
+
+
+    </div>
+
+  </main>
+
+  <div class="thanks" *ngIf="!sendingFlag">
+    <h1 class="h1">
+      Gracias por su tiempo. Su
+      <strong>MEMBRESIA</strong> se ha activado.
+      <br> Nuestro equipo se contactará muy pronto con ustedes, para comenzar a disfrutar los beneficios.
+    </h1>
+    <img src="assets/favicon.png">
+  </div>
+
+  <footer class="mm footer">
+    <div class="row">
+      <span>
+        info@mayorga.com.co
+      </span>
+      <span>
+        Bogotá D.C - Colombia
+      </span>
+    </div>
+    <div class="row">
+      <div class="col skype">
+        <i class="fab fa-skype"></i>
+        <span>mayorgaabogados</span>
+      </div>
+      <div class="col twitter">
+        <i class="fab fa-twitter"></i>
+        <span>@mayorgaabogados</span>
+      </div>
+      <div class="col web">
+        <i class="fas fa-globe"></i>
+        <span>www.mayorga.com.co</span>
+      </div>
+    </div>
+  </footer>
+
+
+</div>
