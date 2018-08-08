@@ -32,11 +32,11 @@ class MMDB{
   function appendForm($form){
 
         // Database Connection //
-    $DB_Username = "mayorgac_abogado";
-    $DB_Password = "suaita.monteria";
-    $DB_Host     = "127.0.0.1";
-    $DB_Database   = "mayorgac_abogados";
-    $DB_Table = "db_especialistas";
+        $DB_Username = "mayorgac_admin";
+        $DB_Password = "suaita.monteria";
+        $DB_Host     = "localhost";
+        $DB_Database   = "mayorgac_db";
+        $DB_Table = "form_abogados_esp_jul_2018";
 
     $connStatus = "";
     $Conn = new mysqli($DB_Host,$DB_Username,$DB_Password,$DB_Database);
@@ -65,7 +65,7 @@ class MMDB{
     $queryValues = $queryValues."'".$data[(count($keys) - 1)]."'".") ";
 
 
-    $sql = "INSERT INTO db_especialistas".$queryKeys."VALUES ".$queryValues;
+    $sql = "INSERT INTO "$DB_Table." ".$queryKeys."VALUES ".$queryValues;
     $returnvar = "";
 
     if ( $Conn->query($sql) === TRUE ) {
