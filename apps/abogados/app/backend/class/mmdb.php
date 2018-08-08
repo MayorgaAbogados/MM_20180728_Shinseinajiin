@@ -65,7 +65,7 @@ class MMDB{
     $queryValues = $queryValues."'".$data[(count($keys) - 1)]."'".") ";
 
 
-    $sql = "INSERT INTO "$DB_Table." ".$queryKeys."VALUES ".$queryValues;
+    $sql = "INSERT INTO ".$DB_Table." ".$queryKeys."VALUES ".$queryValues;
     $returnvar = "";
 
     if ( $Conn->query($sql) === TRUE ) {
