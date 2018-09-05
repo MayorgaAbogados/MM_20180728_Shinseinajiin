@@ -92,7 +92,8 @@ export class AppComponent {
         window.console.log(response);
       })
       .catch(function(error) {
-        window.console.log("error");
+        self.sendingFlag = false;
+        window.console.log(error);
       });
   }
 }
